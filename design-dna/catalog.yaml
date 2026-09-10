@@ -1,0 +1,171 @@
+schema: risheh.design-dna.catalog.v1
+version: 1.0.0
+profiles:
+  - id: apple-minimal
+    name: Apple Minimal
+    personality: [precise, premium, calm, product-led]
+    typography: "large restrained display + highly legible sans body"
+    spacing: "generous macro whitespace; tight internal grouping"
+    layout: "wide centered containers; asymmetric feature storytelling"
+    geometry: "subtle radius, near-invisible borders, restrained shadows"
+    imagery: "high-resolution product/service imagery on quiet backgrounds"
+    motion: low
+    interaction_density: low
+    content_density: low
+    suitable_industries: [technology-saas, professional-services, corporate, healthcare-clinic]
+    prohibited_patterns: [decorative-card-overload, noisy-gradients, excessive-badges]
+    accessibility: [AA-contrast, reduced-motion, semantic-landmarks]
+  - id: editorial-luxury
+    name: Editorial Luxury
+    personality: [sophisticated, tactile, cultured, restrained]
+    typography: "high-contrast editorial display paired with neutral body"
+    spacing: "large narrative pauses and gallery-like pacing"
+    layout: "editorial columns, image-led splits, deliberate asymmetry"
+    geometry: "flat surfaces, hairline rules, minimal rounding"
+    imagery: "art-directed full-bleed photography"
+    motion: low
+    interaction_density: low
+    content_density: medium
+    suitable_industries: [architecture, legal, hospitality-hotel, personal-brand]
+    prohibited_patterns: [generic-saas-cards, loud-gradient-mesh]
+    accessibility: [AA-contrast, readable-line-length, reduced-motion]
+  - id: immersive-3d
+    name: Immersive 3D
+    personality: [experiential, spatial, memorable, technical]
+    typography: "bold supporting type that never competes with the scene"
+    spacing: "cinematic full-viewport moments with clear recovery sections"
+    layout: "layered scenes over a stable semantic document flow"
+    geometry: "scene-dependent; UI controls remain simple"
+    imagery: "3D, WebGL, video and depth-rich media with static fallback"
+    motion: high
+    interaction_density: high
+    content_density: low
+    suitable_industries: [architecture, cafe-restaurant, agency-creative, hospitality-hotel]
+    prohibited_patterns: [motion-dependent-navigation, hidden-essential-copy]
+    accessibility: [static-fallback, reduced-motion, keyboard-controls]
+  - id: cinematic
+    name: Cinematic
+    personality: [emotional, premium, atmospheric, dramatic]
+    typography: "large concise statements over media"
+    spacing: "long-form scene pacing"
+    layout: "full-bleed media alternating with focused text chapters"
+    geometry: "minimal chrome"
+    imagery: "film-grade video, photography and strong crops"
+    motion: medium
+    interaction_density: medium
+    content_density: low
+    suitable_industries: [cafe-restaurant, real-estate, hospitality-hotel, personal-brand]
+    prohibited_patterns: [autoplay-audio, unreadable-text-over-video]
+    accessibility: [captions, pause-controls, reduced-motion]
+  - id: brutalist-premium
+    name: Brutalist Premium
+    personality: [confident, raw, architectural, anti-template]
+    typography: "oversized grotesk and hard hierarchy"
+    spacing: "intentional tension between dense rows and large voids"
+    layout: "hard grid, exposed structure, edge-to-edge composition"
+    geometry: "square corners, visible rules, no cosmetic shadows"
+    imagery: "high-contrast editorial or architectural imagery"
+    motion: medium
+    interaction_density: medium
+    content_density: medium
+    suitable_industries: [architecture, agency-creative, personal-brand]
+    prohibited_patterns: [soft-glassmorphism, pill-everything]
+    accessibility: [focus-visible, AA-contrast, non-hover-equivalents]
+  - id: swiss-grid
+    name: Swiss Grid
+    personality: [systematic, rational, timeless, editorial]
+    typography: "neutral sans with strict scale and alignment"
+    spacing: "mathematical rhythm"
+    layout: "modular grid with explicit alignment"
+    geometry: "flat, rule-based, minimal decoration"
+    imagery: "disciplined ratios and captions"
+    motion: low
+    interaction_density: low
+    content_density: medium
+    suitable_industries: [corporate, construction, architecture, professional-services]
+    prohibited_patterns: [random-card-sizes, decorative-animation]
+    accessibility: [AA-contrast, logical-reading-order, responsive-reflow]
+  - id: calm-luxury
+    name: Calm Luxury
+    personality: [warm, trustworthy, serene, premium]
+    typography: "soft editorial display plus accessible sans"
+    spacing: "generous and breathable"
+    layout: "quiet sections, image-led proof, restrained CTA density"
+    geometry: "soft but not bubbly; subtle borders"
+    imagery: "natural light, material detail, human warmth"
+    motion: low
+    interaction_density: low
+    content_density: low
+    suitable_industries: [architecture, healthcare-clinic, beauty-salon, hospitality-hotel]
+    prohibited_patterns: [aggressive-popups, neon-accents]
+    accessibility: [AA-contrast, calm-motion, form-clarity]
+  - id: bento-modern
+    name: Bento Modern
+    personality: [modular, contemporary, product-minded, clear]
+    typography: "clean sans with strong numeric hierarchy"
+    spacing: "compact modules within generous page bands"
+    layout: "responsive bento clusters and feature matrices"
+    geometry: "medium radius and subtle surfaces"
+    imagery: "UI screenshots, diagrams and controlled illustrations"
+    motion: medium
+    interaction_density: medium
+    content_density: medium
+    suitable_industries: [technology-saas, corporate, education]
+    prohibited_patterns: [identical-card-repetition, random-bento]
+    accessibility: [reading-order, keyboard-nav, reduced-motion]
+  - id: magazine-editorial
+    name: Magazine Editorial
+    personality: [authoritative, informed, narrative, cultural]
+    typography: "strong headline system, deck, byline and readable body"
+    spacing: "article-led vertical rhythm"
+    layout: "multi-column editorial indexes with readable article detail"
+    geometry: "flat cards and rules"
+    imagery: "documentary/editorial images with captions"
+    motion: low
+    interaction_density: low
+    content_density: high
+    suitable_industries: [legal, personal-brand, education, corporate]
+    prohibited_patterns: [tiny-body-copy, decorative-carousel-for-articles]
+    accessibility: [readable-line-length, heading-order, skip-links]
+  - id: conversion-first
+    name: Conversion First
+    personality: [clear, direct, credible, action-oriented]
+    typography: "high-legibility hierarchy optimized for scanning"
+    spacing: "compact proof clusters with clear CTA separation"
+    layout: "problem-proof-offer-action sequence"
+    geometry: "functional cards and forms"
+    imagery: "evidence-led visuals, real people, service context"
+    motion: low
+    interaction_density: medium
+    content_density: medium
+    suitable_industries: [professional-services, healthcare-clinic, education, legal, beauty-salon]
+    prohibited_patterns: [fake-urgency, dark-patterns, distracting-motion]
+    accessibility: [form-labels, error-summary, AA-contrast]
+  - id: gallery-first
+    name: Gallery First
+    personality: [visual, refined, portfolio-led, quiet]
+    typography: "minimal labels and concise project metadata"
+    spacing: "gallery pacing with large media zones"
+    layout: "masonry/grid/list hybrids with strong project detail"
+    geometry: "flat media frames"
+    imagery: "primary storytelling medium"
+    motion: medium
+    interaction_density: medium
+    content_density: low
+    suitable_industries: [architecture, real-estate, beauty-salon, agency-creative]
+    prohibited_patterns: [hover-only-metadata, low-res-images]
+    accessibility: [alt-text, visible-metadata, touch-equivalents]
+  - id: storytelling-scroll
+    name: Storytelling Scroll
+    personality: [narrative, memorable, human, progressive]
+    typography: "chapter-based scale shifts"
+    spacing: "long-form narrative cadence"
+    layout: "scroll chapters with sticky media used sparingly"
+    geometry: "content-led"
+    imagery: "media synchronized to story stages"
+    motion: medium
+    interaction_density: medium
+    content_density: medium
+    suitable_industries: [corporate, personal-brand, hospitality-hotel, agency-creative]
+    prohibited_patterns: [scroll-jacking, essential-content-in-canvas-only]
+    accessibility: [native-scroll, reduced-motion, semantic-fallback]
