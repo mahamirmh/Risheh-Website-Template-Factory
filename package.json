@@ -1,16 +1,21 @@
 {
   "name": "risheh-website-template-factory",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "node --test tests/*.test.mjs && tsx --test tests/c1/*.test.ts",
+    "test": "tsx --test tests/*.test.mjs tests/c1/*.test.ts",
     "validate": "node scripts/validate-factory.mjs",
     "quality": "node scripts/check-quality-gates.mjs",
     "catalog": "node scripts/build-catalog.mjs",
+    "codegen:compat": "tsx scripts/codegen/check-all-archetypes.mjs",
+    "codegen:fixtures": "tsx scripts/codegen/generate-fixture-projects.mjs",
+    "codegen:fixtures:quality": "for d in .generated/fixtures/*; do tsx scripts/codegen/check-generated-project.mjs \"$d\" || exit 1; done",
+    "codegen:forbidden": "tsx scripts/codegen/forbidden-content.mjs .generated/fixtures",
+    "codegen:check": "npm run codegen:compat && npm run codegen:fixtures && npm run codegen:fixtures:quality && npm run codegen:forbidden",
     "check": "npm run validate && npm run quality && npm test"
   },
   "dependencies": {
