@@ -1,0 +1,13 @@
+{
+  "schema":"risheh.build-spec.v1","version":"1.0.0",
+  "project":{"id":"fixture-legal-rtl","name":"نمونه موسسه حقوقی"},
+  "brand":{"name":"نمونه موسسه حقوقی","positioning":"خدمات حقوقی با تمرکز بر شفافیت مسیر مشاوره.","primary_color":"#17324d","secondary_color":"#f4f6f8","locale":{"language":"fa","direction":"rtl","country":"IR"}},
+  "industry":{"id":"legal","archetype":"boutique-editorial-law"},
+  "design":{"dna":["editorial-luxury","magazine-editorial"],"tokens":{}},
+  "pages":[{"id":"home","route":"/"},{"id":"expertise","route":"/expertise"},{"id":"people","route":"/people"},{"id":"contact","route":"/contact"}],
+  "sections":[{"id":"home-hero","pattern":"hero-editorial","page":"home"},{"id":"home-services","pattern":"service-outcome-list","page":"home"},{"id":"home-proof","pattern":"testimonial-editorial","page":"home"},{"id":"home-contact","pattern":"lead-consultation","page":"home"}],
+  "content":{"hero_title":"مسیر حقوقی روشن‌تر","hero_subtitle":"ساختاری برای معرفی حوزه‌های تخصصی و شروع مشاوره.","primary_cta":"درخواست مشاوره","primary_goal":"consultation"},
+  "seo":{"locale":{"language":"fa","direction":"rtl","country":"IR"}},"accessibility":{"target":"AA","reducedMotion":true},"responsive":{"mobileFirst":true},"motion":{"intensity":"low"},
+  "implementation":{"framework":"Next.js","language":"TypeScript","styling":"Tailwind CSS"},
+  "provenance":{"factory_version":"2.1.0","template_id":"legal/boutique-editorial-law","reference_sources":[]}
+}
