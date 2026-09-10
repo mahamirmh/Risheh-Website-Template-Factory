@@ -1,0 +1,21 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"risheh.pattern.v1",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["schema","id","version","family","purpose","business_stage","required_content","optional_content","variants","responsive_rules","accessibility","conversion_role"],
+  "properties":{
+    "schema":{"const":"risheh.pattern.v1"},
+    "id":{"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "version":{"type":"string","pattern":"^\\d+\\.\\d+\\.\\d+$"},
+    "family":{"enum":["hero","navigation","portfolio","services","menu","testimonials","lead-capture","footer"]},
+    "purpose":{"type":"string","minLength":1},
+    "business_stage":{"type":"string","minLength":1},
+    "required_content":{"type":"array","items":{"type":"string"},"uniqueItems":true},
+    "optional_content":{"type":"array","items":{"type":"string"},"uniqueItems":true},
+    "variants":{"type":"array","minItems":1,"items":{"type":"string"}},
+    "responsive_rules":{"type":"array","minItems":1,"items":{"type":"string"}},
+    "accessibility":{"type":"array","minItems":1,"items":{"type":"string"}},
+    "conversion_role":{"type":"string","minLength":1}
+  }
+}

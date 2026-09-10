@@ -1,0 +1,115 @@
+schema: risheh.industry.catalog.v1
+version: 1.0.0
+industries:
+  - id: cafe-restaurant
+    name: Cafe & Restaurant
+    psychology: [atmosphere, menu, signature-items, social-proof, location, reservation]
+    archetypes:
+      - {id: editorial-bistro, design_dna: [editorial-luxury, calm-luxury], primary_goal: reservation, proof_model: atmosphere-and-menu, conversion_model: reservation, motion: low, content_density: medium, patterns: [hero-atmosphere, menu-signature, testimonial-editorial, lead-reservation, footer-local-business], pages: [home, menu, about, gallery, reservation, contact]}
+      - {id: cinematic-fine-dining, design_dna: [cinematic, editorial-luxury], primary_goal: reservation, proof_model: cinematic-experience, conversion_model: reservation, motion: medium, content_density: low, patterns: [hero-atmosphere, menu-signature, portfolio-gallery, lead-reservation, footer-editorial], pages: [home, experience, menu, gallery, reservation, contact]}
+      - {id: modern-menu-first, design_dna: [apple-minimal, conversion-first], primary_goal: menu-discovery, proof_model: product-clarity, conversion_model: order-or-reservation, motion: low, content_density: medium, patterns: [hero-product, menu-category, testimonial-proof-grid, lead-reservation, footer-local-business], pages: [home, menu, offers, about, reservation, contact]}
+  - id: architecture
+    name: Architecture
+    psychology: [emotion, philosophy, portfolio, process, proof, enquiry]
+    archetypes:
+      - {id: calm-editorial-studio, design_dna: [calm-luxury, editorial-luxury], primary_goal: qualified-enquiry, proof_model: project-photography, conversion_model: project-brief, motion: low, content_density: medium, patterns: [hero-gallery, portfolio-gallery, portfolio-case-study, lead-qualified-brief, footer-editorial], pages: [home, projects, project-detail, studio, services, journal, contact]}
+      - {id: immersive-spatial-portfolio, design_dna: [immersive-3d, gallery-first], primary_goal: qualified-enquiry, proof_model: spatial-experience, conversion_model: project-brief, motion: high, content_density: low, patterns: [hero-gallery, nav-overlay, portfolio-gallery, lead-qualified-brief, footer-editorial], pages: [home, projects, project-detail, studio, contact]}
+      - {id: brutalist-architecture-office, design_dna: [brutalist-premium, swiss-grid], primary_goal: portfolio-discovery, proof_model: architectural-authorship, conversion_model: direct-enquiry, motion: medium, content_density: medium, patterns: [hero-editorial, nav-editorial, portfolio-case-study, lead-qualified-brief, footer-editorial], pages: [home, work, office, services, contact]}
+  - id: construction
+    name: Construction
+    psychology: [capability, project-proof, safety, process, capacity, tender-enquiry]
+    archetypes:
+      - {id: corporate-project-authority, design_dna: [swiss-grid, conversion-first], primary_goal: tender-enquiry, proof_model: completed-projects-and-certification, conversion_model: qualified-lead, motion: low, content_density: high, patterns: [hero-authority, nav-corporate, portfolio-case-study, service-authority-grid, lead-qualified-brief, footer-corporate], pages: [home, projects, services, capabilities, company, contact]}
+      - {id: industrial-capability-first, design_dna: [brutalist-premium, swiss-grid], primary_goal: capability-validation, proof_model: equipment-team-and-scale, conversion_model: rfq, motion: low, content_density: high, patterns: [hero-outcome, service-authority-grid, portfolio-gallery, lead-qualified-brief, footer-corporate], pages: [home, capabilities, sectors, projects, safety, contact]}
+      - {id: premium-development-showcase, design_dna: [cinematic, gallery-first], primary_goal: project-enquiry, proof_model: development-visuals, conversion_model: project-enquiry, motion: medium, content_density: low, patterns: [hero-gallery, portfolio-gallery, testimonial-editorial, lead-qualified-brief, footer-editorial], pages: [home, developments, project-detail, company, contact]}
+  - id: legal
+    name: Legal
+    psychology: [problem, authority, expertise, evidence, process, consultation]
+    archetypes:
+      - {id: institutional-authority, design_dna: [swiss-grid, magazine-editorial], primary_goal: consultation, proof_model: credentials-and-expertise, conversion_model: consultation, motion: low, content_density: high, patterns: [hero-authority, nav-corporate, service-authority-grid, testimonial-proof-grid, lead-consultation, footer-corporate], pages: [home, practice-areas, team, insights, about, contact]}
+      - {id: boutique-editorial-law, design_dna: [editorial-luxury, magazine-editorial], primary_goal: consultation, proof_model: thought-leadership-and-case-experience, conversion_model: consultation, motion: low, content_density: medium, patterns: [hero-editorial, nav-editorial, service-outcome-list, testimonial-editorial, lead-consultation, footer-editorial], pages: [home, expertise, people, journal, firm, contact]}
+      - {id: local-seo-consultation, design_dna: [conversion-first, calm-luxury], primary_goal: local-lead, proof_model: local-authority-and-reviews, conversion_model: call-message-form, motion: low, content_density: medium, patterns: [hero-local-intent, nav-local-service, service-authority-grid, testimonial-proof-grid, lead-local-contact, footer-local-business], pages: [home, services, service-detail, sari, faq, contact]}
+  - id: professional-services
+    name: Professional Services
+    psychology: [problem, outcome, capability, proof, method, contact]
+    archetypes:
+      - {id: apple-service-company, design_dna: [apple-minimal], primary_goal: qualified-lead, proof_model: clarity-and-polish, conversion_model: enquiry, motion: low, content_density: low, patterns: [hero-outcome, nav-corporate, service-outcome-list, testimonial-proof-grid, lead-qualified-brief, footer-corporate], pages: [home, services, work, about, contact]}
+      - {id: outcome-consulting, design_dna: [conversion-first, swiss-grid], primary_goal: consultation, proof_model: measurable-outcomes, conversion_model: consultation, motion: low, content_density: medium, patterns: [hero-outcome, service-outcome-list, portfolio-case-study, testimonial-proof-grid, lead-consultation, footer-corporate], pages: [home, outcomes, services, cases, insights, contact]}
+      - {id: editorial-expertise, design_dna: [magazine-editorial, editorial-luxury], primary_goal: authority-building, proof_model: expertise-and-content, conversion_model: enquiry, motion: low, content_density: high, patterns: [hero-editorial, nav-editorial, service-authority-grid, testimonial-editorial, lead-qualified-brief, footer-editorial], pages: [home, expertise, insights, about, contact]}
+  - id: corporate
+    name: Corporate
+    psychology: [identity, scale, capability, governance, proof, stakeholder-action]
+    archetypes:
+      - {id: institutional-corporate, design_dna: [swiss-grid], primary_goal: corporate-credibility, proof_model: scale-governance-results, conversion_model: stakeholder-contact, motion: low, content_density: high, patterns: [hero-authority, nav-corporate, service-authority-grid, portfolio-case-study, footer-corporate], pages: [home, company, businesses, governance, news, contact]}
+      - {id: modern-enterprise, design_dna: [apple-minimal, bento-modern], primary_goal: solution-discovery, proof_model: capability-and-platform, conversion_model: sales-contact, motion: medium, content_density: medium, patterns: [hero-product, nav-product, service-outcome-list, testimonial-proof-grid, lead-qualified-brief, footer-corporate], pages: [home, solutions, industries, company, resources, contact]}
+      - {id: story-led-company, design_dna: [storytelling-scroll, cinematic], primary_goal: brand-understanding, proof_model: narrative-and-impact, conversion_model: contact, motion: medium, content_density: medium, patterns: [hero-editorial, portfolio-case-study, testimonial-editorial, lead-qualified-brief, footer-editorial], pages: [home, story, impact, businesses, people, contact]}
+  - id: healthcare-clinic
+    name: Healthcare & Clinic
+    psychology: [symptom-or-need, reassurance, expertise, service-fit, logistics, booking]
+    archetypes:
+      - {id: calm-clinic, design_dna: [calm-luxury, conversion-first], primary_goal: booking, proof_model: clinician-trust-and-clear-services, conversion_model: appointment, motion: low, content_density: medium, patterns: [hero-local-intent, nav-local-service, service-authority-grid, testimonial-proof-grid, lead-consultation, footer-local-business], pages: [home, services, doctors, faq, contact, booking]}
+      - {id: specialist-authority, design_dna: [swiss-grid, magazine-editorial], primary_goal: specialist-consultation, proof_model: expertise-publications-credentials, conversion_model: consultation, motion: low, content_density: high, patterns: [hero-authority, service-authority-grid, testimonial-editorial, lead-consultation, footer-corporate], pages: [home, specialty, doctor, resources, faq, contact]}
+      - {id: digital-care-service, design_dna: [apple-minimal, bento-modern], primary_goal: service-start, proof_model: workflow-convenience-trust, conversion_model: start-care, motion: medium, content_density: medium, patterns: [hero-product, nav-product, service-outcome-list, testimonial-proof-grid, lead-consultation, footer-corporate], pages: [home, how-it-works, services, pricing, faq, start]}
+  - id: beauty-salon
+    name: Beauty & Salon
+    psychology: [aspiration, visual-proof, service-fit, trust, price-or-package, booking]
+    archetypes:
+      - {id: editorial-beauty, design_dna: [editorial-luxury, gallery-first], primary_goal: booking, proof_model: portfolio-and-brand-aesthetic, conversion_model: booking, motion: low, content_density: low, patterns: [hero-gallery, portfolio-gallery, service-outcome-list, lead-consultation, footer-local-business], pages: [home, services, gallery, team, contact, booking]}
+      - {id: local-booking-first, design_dna: [conversion-first, calm-luxury], primary_goal: local-booking, proof_model: reviews-results-location, conversion_model: booking, motion: low, content_density: medium, patterns: [hero-local-intent, nav-local-service, testimonial-proof-grid, lead-local-contact, footer-local-business], pages: [home, services, prices, reviews, contact, booking]}
+      - {id: premium-treatment-studio, design_dna: [calm-luxury, cinematic], primary_goal: treatment-enquiry, proof_model: expertise-and-results, conversion_model: consultation, motion: medium, content_density: low, patterns: [hero-atmosphere, portfolio-gallery, service-authority-grid, testimonial-editorial, lead-consultation, footer-editorial], pages: [home, treatments, results, studio, contact]}
+  - id: real-estate
+    name: Real Estate
+    psychology: [location, property-fit, visual-proof, details, trust, viewing]
+    archetypes:
+      - {id: cinematic-luxury-property, design_dna: [cinematic, gallery-first], primary_goal: viewing, proof_model: property-visuals, conversion_model: viewing-request, motion: medium, content_density: low, patterns: [hero-gallery, portfolio-gallery, lead-qualified-brief, footer-editorial], pages: [home, properties, property-detail, neighborhoods, about, contact]}
+      - {id: searchable-listings, design_dna: [apple-minimal, bento-modern], primary_goal: property-discovery, proof_model: searchable-inventory, conversion_model: enquiry, motion: low, content_density: high, patterns: [hero-product, nav-product, portfolio-gallery, lead-local-contact, footer-corporate], pages: [home, listings, property-detail, agents, neighborhoods, contact]}
+      - {id: developer-authority, design_dna: [swiss-grid, editorial-luxury], primary_goal: development-enquiry, proof_model: track-record-and-projects, conversion_model: qualified-lead, motion: low, content_density: medium, patterns: [hero-authority, portfolio-case-study, testimonial-proof-grid, lead-qualified-brief, footer-corporate], pages: [home, developments, project-detail, company, investors, contact]}
+  - id: education
+    name: Education
+    psychology: [aspiration, program-fit, outcomes, trust, logistics, application]
+    archetypes:
+      - {id: academy-conversion, design_dna: [conversion-first, bento-modern], primary_goal: enrollment, proof_model: outcomes-curriculum-testimonials, conversion_model: application, motion: low, content_density: medium, patterns: [hero-outcome, nav-product, service-outcome-list, testimonial-proof-grid, lead-qualified-brief, footer-corporate], pages: [home, programs, program-detail, outcomes, faq, apply]}
+      - {id: school-community, design_dna: [calm-luxury, storytelling-scroll], primary_goal: admissions-enquiry, proof_model: culture-results-community, conversion_model: visit-or-apply, motion: low, content_density: medium, patterns: [hero-editorial, testimonial-editorial, service-authority-grid, lead-consultation, footer-corporate], pages: [home, school, academics, admissions, community, contact]}
+      - {id: knowledge-platform, design_dna: [magazine-editorial, swiss-grid], primary_goal: content-learning, proof_model: expert-content, conversion_model: subscribe-or-enroll, motion: low, content_density: high, patterns: [hero-editorial, nav-editorial, service-outcome-list, footer-editorial], pages: [home, library, courses, article, about, join]}
+  - id: ecommerce
+    name: E-commerce
+    psychology: [product-fit, value, proof, friction-reduction, purchase]
+    archetypes:
+      - {id: premium-product-store, design_dna: [apple-minimal, editorial-luxury], primary_goal: purchase, proof_model: product-detail-and-brand, conversion_model: checkout, motion: low, content_density: medium, patterns: [hero-product, nav-product, testimonial-proof-grid, footer-corporate], pages: [home, shop, product, collections, about, cart]}
+      - {id: visual-lifestyle-commerce, design_dna: [cinematic, gallery-first], primary_goal: discovery-to-purchase, proof_model: lifestyle-storytelling, conversion_model: checkout, motion: medium, content_density: low, patterns: [hero-atmosphere, portfolio-gallery, testimonial-editorial, footer-editorial], pages: [home, collections, product, journal, about, cart]}
+      - {id: catalog-conversion, design_dna: [conversion-first, bento-modern], primary_goal: purchase, proof_model: assortment-price-reviews, conversion_model: checkout, motion: low, content_density: high, patterns: [hero-product, nav-product, testimonial-proof-grid, footer-corporate], pages: [home, categories, search, product, offers, cart]}
+  - id: hospitality-hotel
+    name: Hospitality & Hotel
+    psychology: [destination-desire, rooms, experience, trust, availability, booking]
+    archetypes:
+      - {id: cinematic-resort, design_dna: [cinematic, calm-luxury], primary_goal: booking, proof_model: destination-and-experience, conversion_model: booking, motion: medium, content_density: low, patterns: [hero-atmosphere, portfolio-gallery, testimonial-editorial, lead-reservation, footer-editorial], pages: [home, rooms, experiences, dining, gallery, book]}
+      - {id: boutique-editorial-hotel, design_dna: [editorial-luxury, storytelling-scroll], primary_goal: booking, proof_model: identity-design-local-story, conversion_model: booking, motion: medium, content_density: medium, patterns: [hero-editorial, nav-editorial, portfolio-gallery, testimonial-editorial, lead-reservation, footer-editorial], pages: [home, stay, story, neighborhood, journal, book]}
+      - {id: direct-booking-hotel, design_dna: [conversion-first, calm-luxury], primary_goal: direct-booking, proof_model: rooms-rates-reviews, conversion_model: booking, motion: low, content_density: medium, patterns: [hero-local-intent, nav-local-service, testimonial-proof-grid, lead-reservation, footer-local-business], pages: [home, rooms, offers, amenities, location, book]}
+  - id: gym-fitness
+    name: Gym & Fitness
+    psychology: [goal, energy, program-fit, proof, schedule, membership]
+    archetypes:
+      - {id: performance-gym, design_dna: [brutalist-premium, conversion-first], primary_goal: membership, proof_model: results-coaches-facilities, conversion_model: trial-or-membership, motion: medium, content_density: medium, patterns: [hero-outcome, service-authority-grid, testimonial-proof-grid, lead-local-contact, footer-local-business], pages: [home, programs, coaches, results, schedule, join]}
+      - {id: premium-wellness-club, design_dna: [calm-luxury, editorial-luxury], primary_goal: consultation, proof_model: environment-expertise, conversion_model: consultation, motion: low, content_density: low, patterns: [hero-atmosphere, service-outcome-list, testimonial-editorial, lead-consultation, footer-editorial], pages: [home, wellness, training, club, contact, join]}
+      - {id: class-schedule-first, design_dna: [bento-modern, conversion-first], primary_goal: class-booking, proof_model: schedule-instructors-community, conversion_model: class-booking, motion: low, content_density: high, patterns: [hero-product, nav-product, testimonial-proof-grid, lead-local-contact, footer-local-business], pages: [home, schedule, classes, coaches, pricing, book]}
+  - id: technology-saas
+    name: Technology & SaaS
+    psychology: [problem, product-value, how-it-works, proof, pricing, trial]
+    archetypes:
+      - {id: apple-saas, design_dna: [apple-minimal], primary_goal: trial, proof_model: product-clarity-and-polish, conversion_model: signup, motion: low, content_density: low, patterns: [hero-product, nav-product, service-outcome-list, testimonial-proof-grid, footer-corporate], pages: [home, product, solutions, pricing, resources, signup]}
+      - {id: bento-product-platform, design_dna: [bento-modern], primary_goal: demo, proof_model: features-integrations-workflows, conversion_model: demo-or-trial, motion: medium, content_density: medium, patterns: [hero-product, nav-product, service-authority-grid, testimonial-proof-grid, lead-qualified-brief, footer-corporate], pages: [home, platform, solutions, integrations, pricing, demo]}
+      - {id: technical-developer-product, design_dna: [swiss-grid, brutalist-premium], primary_goal: developer-adoption, proof_model: docs-api-performance, conversion_model: start-building, motion: low, content_density: high, patterns: [hero-outcome, nav-product, service-outcome-list, footer-corporate], pages: [home, docs, api, examples, pricing, start]}
+  - id: agency-creative
+    name: Agency & Creative Studio
+    psychology: [memorability, work, capability, culture, fit, enquiry]
+    archetypes:
+      - {id: immersive-creative-studio, design_dna: [immersive-3d, brutalist-premium], primary_goal: project-enquiry, proof_model: execution-as-proof, conversion_model: project-brief, motion: high, content_density: low, patterns: [hero-editorial, nav-overlay, portfolio-gallery, lead-qualified-brief, footer-editorial], pages: [home, work, project-detail, studio, contact]}
+      - {id: editorial-brand-agency, design_dna: [editorial-luxury, magazine-editorial], primary_goal: project-enquiry, proof_model: case-studies-and-thinking, conversion_model: project-brief, motion: low, content_density: medium, patterns: [hero-editorial, nav-editorial, portfolio-case-study, testimonial-editorial, lead-qualified-brief, footer-editorial], pages: [home, work, services, thinking, about, contact]}
+      - {id: outcome-digital-agency, design_dna: [conversion-first, bento-modern], primary_goal: qualified-lead, proof_model: outcomes-process-capability, conversion_model: consultation, motion: medium, content_density: medium, patterns: [hero-outcome, service-outcome-list, portfolio-case-study, testimonial-proof-grid, lead-consultation, footer-corporate], pages: [home, services, cases, process, about, contact]}
+  - id: personal-brand
+    name: Personal Brand & Expert
+    psychology: [identity, point-of-view, expertise, proof, content, action]
+    archetypes:
+      - {id: editorial-expert, design_dna: [magazine-editorial, editorial-luxury], primary_goal: authority-and-leads, proof_model: ideas-publications-expertise, conversion_model: contact-or-subscribe, motion: low, content_density: high, patterns: [hero-editorial, nav-editorial, testimonial-editorial, lead-qualified-brief, footer-editorial], pages: [home, about, writing, speaking, work-with-me, contact]}
+      - {id: cinematic-creator, design_dna: [cinematic, storytelling-scroll], primary_goal: audience-growth, proof_model: personality-and-work, conversion_model: follow-subscribe-partner, motion: medium, content_density: low, patterns: [hero-atmosphere, portfolio-gallery, testimonial-editorial, footer-editorial], pages: [home, story, work, media, partnerships, contact]}
+      - {id: productized-consultant, design_dna: [apple-minimal, conversion-first], primary_goal: consultation, proof_model: offer-outcomes-testimonials, conversion_model: booking, motion: low, content_density: medium, patterns: [hero-outcome, service-outcome-list, testimonial-proof-grid, lead-consultation, footer-corporate], pages: [home, offers, results, insights, about, book]}

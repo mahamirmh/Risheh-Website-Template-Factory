@@ -1,0 +1,48 @@
+schema: risheh.build-spec.v1
+version: 1.0.0
+project:
+  id: sample-editorial-bistro
+  name: Sample Editorial Bistro
+brand:
+  name: Sample Bistro
+  personality: [warm, editorial, premium]
+industry:
+  id: cafe-restaurant
+  archetype: editorial-bistro
+design:
+  dna: [editorial-luxury, calm-luxury]
+  tokens:
+    direction: rtl
+pages:
+  - {id: home, route: /}
+  - {id: menu, route: /menu}
+  - {id: about, route: /about}
+  - {id: reservation, route: /reservation}
+sections:
+  - {id: home-hero, page: home, pattern: hero-atmosphere}
+  - {id: home-signature, page: home, pattern: menu-signature}
+  - {id: home-proof, page: home, pattern: testimonial-editorial}
+  - {id: home-reservation, page: home, pattern: lead-reservation}
+content:
+  locale: fa-IR
+  direction: rtl
+seo:
+  intent: local-restaurant-discovery
+  local_business: true
+accessibility:
+  target: WCAG-2.2-AA
+  reduced_motion: true
+responsive:
+  strategy: mobile-first
+  breakpoints: [320, 480, 768, 1024, 1440]
+motion:
+  intensity: low
+  reduced_motion_fallback: static-reveal
+implementation:
+  framework: Next.js
+  language: TypeScript
+  styling: Tailwind CSS
+provenance:
+  factory_version: 2.0.0
+  template_id: cafe-restaurant:editorial-bistro
+  reference_sources: []
