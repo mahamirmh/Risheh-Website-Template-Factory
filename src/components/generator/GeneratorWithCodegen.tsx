@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { GeneratorWorkspace } from './GeneratorWorkspace';
 import { GenerateProjectPanel } from './GenerateProjectPanel';
 import { composeBuildSpec, validateDraftForBuild } from '@/features/generator/build-spec';
@@ -7,6 +8,18 @@ import { loadDraft } from '@/features/generator/persistence';
 import type { FactoryCatalog } from '@/types/factory';
 
 export function GeneratorWithCodegen({ catalog }: { catalog: FactoryCatalog }) {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const check = () => {
+      const draft = loadDraft();
+      setReady(Boolean(draft && validateDraftForBuild(catalog, draft).length === 0));
+    };
+    check();
+    const timer = window.setInterval(check, 700);
+    return () => window.clearInterval(timer);
+  }, [catalog]);
+
   async function getBuildSpec() {
     const draft = loadDraft();
     if (!draft) return null;
@@ -23,7 +36,7 @@ export function GeneratorWithCodegen({ catalog }: { catalog: FactoryCatalog }) {
     <>
       <GeneratorWorkspace catalog={catalog} />
       <div className="c2-dock">
-        <GenerateProjectPanel disabled={false} getBuildSpec={getBuildSpec} />
+        <GenerateProjectPanel disabled={!ready} getBuildSpec={getBuildSpec} />
       </div>
     </>
   );
