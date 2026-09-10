@@ -1,0 +1,25 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"risheh.build-spec.v1",
+  "title":"Risheh Generator Build Specification",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["schema","version","project","brand","industry","design","pages","sections","content","seo","accessibility","responsive","motion","implementation","provenance"],
+  "properties":{
+    "schema":{"const":"risheh.build-spec.v1"},
+    "version":{"type":"string","pattern":"^\\d+\\.\\d+\\.\\d+$"},
+    "project":{"type":"object","required":["id","name"],"properties":{"id":{"type":"string"},"name":{"type":"string"}}},
+    "brand":{"type":"object"},
+    "industry":{"type":"object","required":["id","archetype"],"properties":{"id":{"type":"string"},"archetype":{"type":"string"}}},
+    "design":{"type":"object","required":["dna"],"properties":{"dna":{"type":"array","minItems":1,"items":{"type":"string"}},"tokens":{"type":"object"}}},
+    "pages":{"type":"array","minItems":1,"items":{"type":"object","required":["id","route"],"properties":{"id":{"type":"string"},"route":{"type":"string"}}}},
+    "sections":{"type":"array","items":{"type":"object","required":["id","pattern"],"properties":{"id":{"type":"string"},"pattern":{"type":"string"},"page":{"type":"string"}}}},
+    "content":{"type":"object"},
+    "seo":{"type":"object"},
+    "accessibility":{"type":"object"},
+    "responsive":{"type":"object"},
+    "motion":{"type":"object"},
+    "implementation":{"type":"object","required":["framework","language","styling"],"properties":{"framework":{"type":"string"},"language":{"type":"string"},"styling":{"type":"string"}}},
+    "provenance":{"type":"object","required":["factory_version","template_id"],"properties":{"factory_version":{"type":"string"},"template_id":{"type":"string"},"reference_sources":{"type":"array","items":{"type":"string"}}}}
+  }
+}
