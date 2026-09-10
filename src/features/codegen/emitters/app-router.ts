@@ -14,6 +14,8 @@ export function emitAppRouter(model: GenerationModel): GeneratedFile[] {
     const pageSections = model.sections.filter((section) => section.pageId === route.id);
     const imports = [...new Set(pageSections.map((section) => section.componentName))].sort();
     const importLine = imports.length ? `import { ${imports.join(', ')} } from '@/components/sections/generated';\n` : '';
+    const usesSiteContent = pageSections.some((section, index) => index === 0 && section.patternId.startsWith('hero-'));
+    const siteImport = usesSiteContent ? `import { site } from '@/content/site';\n` : '';
     const rendered = pageSections.map((section, index) => {
       const isFirstHero = index === 0 && section.patternId.startsWith('hero-');
       const props = isFirstHero
@@ -22,7 +24,7 @@ export function emitAppRouter(model: GenerationModel): GeneratedFile[] {
       return `      <${section.componentName}${props} />`;
     }).join('\n');
     const empty = `      <section className="section"><div className="section__inner"><div className="section__label">Page</div><h1>${pageTitle(route.id)}</h1><p>Explore this section of the website.</p></div></section>`;
-    const page = `${importLine}import { site } from '@/content/site';\n\nexport default function Page() {\n  return (\n    <main>\n${rendered || empty}\n    </main>\n  );\n}\n`;
+    const page = `${importLine}${siteImport}\nexport default function Page() {\n  return (\n    <main>\n${rendered || empty}\n    </main>\n  );\n}\n`;
     files.push(makeGeneratedFile({ path: route.filePath, kind: 'route', owner: 'app-router', sources: [`page:${route.id}`, ...pageSections.map((section) => `pattern:${section.patternId}`)], content: page, overwrite: 'replace-generated' }));
   }
   return files;
