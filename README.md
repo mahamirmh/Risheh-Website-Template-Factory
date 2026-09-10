@@ -23,7 +23,7 @@ Brand / Content Configuration
         ↓
 risheh.build-spec.v1
         ↓
-Next.js / AI Agent / Future Visual Generator
+Phase C1 Visual Generator / Agent Handoff
 ```
 
 ### Current factory inventory
@@ -36,6 +36,7 @@ Next.js / AI Agent / Future Visual Generator
 | Reusable patterns | **27** |
 | Phase C contract | `risheh.build-spec.v1` |
 | Languages | RTL + LTR |
+| Visual generator | **Phase C1** |
 
 ## 🧠 Core principle
 
@@ -51,6 +52,23 @@ Business Psychology
 ```
 
 Archetypes must differ materially in at least two dimensions such as layout architecture, proof model, conversion model, motion model, content density, interaction model or design DNA. A color/font swap is not a new archetype.
+
+## 🖥️ Phase C1 — Visual Generator
+
+The repository includes a real Next.js composition interface at `/generator`.
+
+C1 lets a user select an industry and archetype, blend compatible Design DNA profiles, configure pages/patterns, enter brand/content/locale inputs, apply accessibility/SEO/responsive/motion preferences, and then export a **schema-validated `risheh.build-spec.v1`**.
+
+It also generates copy-ready handoff prompts for **Codex**, **Claude Code**, and provider-neutral coding agents. C1 deliberately stops before autonomous code generation; that remains the Phase C2 boundary.
+
+```bash
+npm install
+npm run dev
+```
+
+Then open `http://localhost:3000/generator`.
+
+See `docs/PHASE_C1_VISUAL_GENERATOR.md` for the operating guide.
 
 ## 🏭 Industry packs
 
@@ -81,16 +99,7 @@ Each profile defines typography behavior, spacing, layout, geometry, imagery, mo
 
 ## 🧩 Pattern library
 
-`patterns/catalog.yaml` contains reusable behavioral patterns for:
-
-- Hero
-- Navigation
-- Portfolio / Case Study
-- Services
-- Menu
-- Testimonials / Proof
-- Lead Capture
-- Footer
+`patterns/catalog.yaml` contains reusable behavioral patterns for Hero, Navigation, Portfolio / Case Study, Services, Menu, Testimonials / Proof, Lead Capture and Footer.
 
 Patterns describe **purpose and behavior**, not brand mimicry.
 
@@ -102,17 +111,16 @@ Existing files in `templates/` remain valuable design-analysis sources. They doc
 
 ```text
 .
+├── app/                       # Phase C1 Next.js App Router UI
+├── src/                       # generator engine, catalog loader, UI and contracts
 ├── templates/                 # existing reference analyses
 ├── design-dna/catalog.yaml    # 12 reusable visual systems
 ├── patterns/catalog.yaml      # 27 reusable patterns
 ├── industries/catalog.yaml    # 16 industries + 48 archetypes
 ├── schemas/                   # stable machine-readable contracts
-├── scripts/
-│   ├── validate-factory.mjs
-│   ├── check-quality-gates.mjs
-│   └── build-catalog.mjs
-├── tests/
-├── docs/
+├── scripts/                   # validation, quality and catalog generation
+├── tests/                     # Phase B + C1 contract tests
+├── docs/                      # architecture, standards and C1 guide
 └── .github/workflows/factory-quality.yml
 ```
 
@@ -127,7 +135,7 @@ The v2 architecture exposes stable IDs:
 - `risheh.catalog.v1`
 - `risheh.build-spec.v1`
 
-Phase C must consume these contracts directly. It must **not** scrape prose from Markdown to discover generator behavior.
+Phase C consumes these contracts directly. It does **not** scrape prose from Markdown to discover generator behavior.
 
 ## ✅ Validation & quality gates
 
@@ -137,13 +145,14 @@ npm run validate
 npm run quality
 npm test
 npm run catalog
+npm run build
 # or
 npm run check
 ```
 
 Validation fails on missing references, duplicate IDs, unsupported Design DNA/pattern links, industries with fewer than three archetypes, fewer than 48 total archetypes, invalid high-motion combinations and insufficient archetype differentiation.
 
-GitHub Actions runs the same checks on feature pushes and pull requests.
+C1 adds tests for deterministic Build Spec composition and handoff contracts. GitHub Actions also runs a real Next.js production build.
 
 ## 🌐 RTL / LTR
 
@@ -157,21 +166,26 @@ Reusable output must target WCAG AA, semantic HTML, keyboard access, visible foc
 
 The factory may learn from layout logic, hierarchy, spacing, interaction patterns and UX strategy, but it must never copy a reference site's trademarked identity, proprietary imagery, claims, testimonials, customer data or distinctive trade dress.
 
-## 🚀 Phase C
-
-The next product layer can add a visual configurator / AI generator on top of the same contracts:
+## 🚀 Phase C roadmap
 
 ```text
+Phase C1
 Select Industry
 → Select Archetype
 → Select / Blend Design DNA
+→ Configure Pages + Patterns
 → Enter Brand + Content
 → Validate
 → Produce risheh.build-spec.v1
-→ Generate production project
+→ Agent Handoff
+
+Phase C2 (future)
+Validated Build Spec
+→ Code Generation
+→ Production Project
 ```
 
-See `docs/PHASE_C_CONTRACTS.md` for the generator boundary.
+See `docs/PHASE_C_CONTRACTS.md` and `docs/PHASE_C1_VISUAL_GENERATOR.md` for the product boundary.
 
 ---
 

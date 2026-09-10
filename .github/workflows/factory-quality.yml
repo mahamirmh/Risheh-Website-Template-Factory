@@ -22,3 +22,5 @@ jobs:
       - run: npm run catalog
       - name: Verify catalog is generator-ready
         run: test -s generated/catalog.json
+      - name: Build Phase C1 application
+        run: npm run build
