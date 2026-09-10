@@ -13,14 +13,14 @@ export function emitContent(model: GenerationModel): GeneratedFile[] {
     project: model.project,
     brand: {
       name: pickString(brand, 'name') ?? model.project.name,
-      positioning: pickString(brand, 'positioning'),
+      positioning: pickString(brand, 'positioning') ?? null,
     },
     locale: model.locale,
     content: {
-      heroTitle: pickString(content, 'hero_title', 'heroTitle'),
-      heroSubtitle: pickString(content, 'hero_subtitle', 'heroSubtitle'),
-      primaryCta: pickString(content, 'primary_cta', 'primaryCta'),
-      primaryGoal: pickString(content, 'primary_goal', 'primaryGoal'),
+      heroTitle: pickString(content, 'hero_title', 'heroTitle') ?? null,
+      heroSubtitle: pickString(content, 'hero_subtitle', 'heroSubtitle') ?? null,
+      primaryCta: pickString(content, 'primary_cta', 'primaryCta') ?? null,
+      primaryGoal: pickString(content, 'primary_goal', 'primaryGoal') ?? null,
     },
     routes: model.routes.map((route) => ({ id: route.id, route: route.route })),
   };
