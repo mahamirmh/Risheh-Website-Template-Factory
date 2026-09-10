@@ -1,0 +1,24 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"risheh.template.v1",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["schema","id","version","industry","subcategory","status","design_dna","business_goals","audience","ux_recipe","patterns","pages","locale","implementation","quality"],
+  "properties":{
+    "schema":{"const":"risheh.template.v1"},
+    "id":{"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "version":{"type":"string","pattern":"^\\d+\\.\\d+\\.\\d+$"},
+    "industry":{"type":"string"},
+    "subcategory":{"type":"string"},
+    "status":{"enum":["draft","review","ready","deprecated"]},
+    "design_dna":{"type":"array","minItems":1,"items":{"type":"string"},"uniqueItems":true},
+    "business_goals":{"type":"object","required":["primary"],"properties":{"primary":{"type":"string"},"secondary":{"type":"array","items":{"type":"string"}}}},
+    "audience":{"type":"object","required":["intent","trust_model"],"properties":{"intent":{"type":"string"},"trust_model":{"type":"string"},"decision_friction":{"type":"string"}}},
+    "ux_recipe":{"type":"array","minItems":4,"items":{"type":"string"}},
+    "patterns":{"type":"array","minItems":3,"items":{"type":"string"},"uniqueItems":true},
+    "pages":{"type":"array","minItems":1,"items":{"type":"string"},"uniqueItems":true},
+    "locale":{"type":"object","required":["rtl_supported","ltr_supported"],"properties":{"rtl_supported":{"type":"boolean"},"ltr_supported":{"type":"boolean"}}},
+    "implementation":{"type":"object","required":["preferred_framework","preferred_language","preferred_styling"],"properties":{"preferred_framework":{"type":"string"},"preferred_language":{"type":"string"},"preferred_styling":{"type":"string"}}},
+    "quality":{"type":"object","required":["differentiators","accessibility_level"],"properties":{"differentiators":{"type":"array","minItems":2,"items":{"type":"string"}},"accessibility_level":{"enum":["AA","AAA"]}}}
+  }
+}
