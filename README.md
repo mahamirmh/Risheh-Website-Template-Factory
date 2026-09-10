@@ -1,342 +1,178 @@
-# 🧩 Risheh Website Template Factory
+# 🌿 Risheh Website Template Factory
 
-> یک کتابخانه مهندسی‌شده برای تبدیل وب‌سایت‌های مرجع به **Template Specification**‌های قابل بازاستفاده، شخصی‌سازی و پیاده‌سازی سریع.
+> **Business-oriented website design intelligence for fast, high-quality, non-generic website production.**
 
-این Repository کد یک سایت مشخص نیست؛ یک **Design & Architecture Knowledge Base** است. هر وب‌سایت مرجع به یک فایل مستقل تبدیل می‌شود که ساختار، معماری اطلاعات، UI/UX، Design System، الگوهای کامپوننت، Responsive Rules، Content Model و Prompt نهایی ساخت را مستند می‌کند.
+Risheh Website Template Factory is not a collection of cloned themes. It is a structured **Design Intelligence + Business Archetype Factory** that turns reference-site research into reusable design DNA, UX patterns, industry psychology, validated archetypes and generator-ready build specifications.
 
----
+## ✨ Factory v2 — B → C-ready
 
-## 🎯 هدف
-
-برای هر سایت مرجع:
-
-1. ساختار واقعی سایت استخراج شود.
-2. منطق UX و Information Architecture تحلیل شود.
-3. Design System و الگوهای بصری ثبت شوند.
-4. Component Architecture مشخص شود.
-5. قوانین Responsive و Mobile UX استخراج شوند.
-6. نقاط ضعف مرجع شناسایی و در Template اصلاح شوند.
-7. خروجی از برند اصلی جدا و قابل شخصی‌سازی شود.
-8. یک **Master Build Prompt** دقیق برای بازتولید Template تولید شود.
-
-نتیجه این است که به‌جای طراحی هر پروژه از صفر، فقط Template مناسب انتخاب و Brand/Content/Data آن جایگزین می‌شود.
-
----
-
-# 📁 Naming Convention
-
-هر سایت مرجع یک فایل مستقل در مسیر `templates/` دارد.
+The repository now has two complementary layers:
 
 ```text
-Risheh-Website-Template-Factory/
-├── README.md
+Reference Analysis Library
+        ↓
+Design DNA Library
+        ↓
+Pattern Library
+        ↓
+Industry Psychology
+        ↓
+Business Archetypes
+        ↓
+Brand / Content Configuration
+        ↓
+risheh.build-spec.v1
+        ↓
+Next.js / AI Agent / Future Visual Generator
+```
+
+### Current factory inventory
+
+| Layer | Current baseline |
+|---|---:|
+| Industry families | **16** |
+| Business archetypes | **48** |
+| Design DNA profiles | **12** |
+| Reusable patterns | **27** |
+| Phase C contract | `risheh.build-spec.v1` |
+| Languages | RTL + LTR |
+
+## 🧠 Core principle
+
+**Industry ≠ visual style.** A law firm, architecture studio or cafe must never be forced into one visual template. Each output composes independent layers:
+
+```text
+Business Psychology
++ Design DNA
++ UX / Conversion Recipe
++ Pattern Selection
++ Brand & Content Configuration
+= Build Specification
+```
+
+Archetypes must differ materially in at least two dimensions such as layout architecture, proof model, conversion model, motion model, content density, interaction model or design DNA. A color/font swap is not a new archetype.
+
+## 🏭 Industry packs
+
+The current catalog covers:
+
+`cafe-restaurant` · `architecture` · `construction` · `legal` · `professional-services` · `corporate` · `healthcare-clinic` · `beauty-salon` · `real-estate` · `education` · `ecommerce` · `hospitality-hotel` · `gym-fitness` · `technology-saas` · `agency-creative` · `personal-brand`
+
+Every industry has at least three distinct archetypes with its own goal, proof model, conversion model, pages, Design DNA and pattern composition.
+
+## 🎨 Design DNA
+
+Reusable profiles live in `design-dna/catalog.yaml`:
+
+- Apple Minimal
+- Editorial Luxury
+- Immersive 3D
+- Cinematic
+- Brutalist Premium
+- Swiss Grid
+- Calm Luxury
+- Bento Modern
+- Magazine Editorial
+- Conversion First
+- Gallery First
+- Storytelling Scroll
+
+Each profile defines typography behavior, spacing, layout, geometry, imagery, motion, density, industry fit, prohibited patterns and accessibility safeguards.
+
+## 🧩 Pattern library
+
+`patterns/catalog.yaml` contains reusable behavioral patterns for:
+
+- Hero
+- Navigation
+- Portfolio / Case Study
+- Services
+- Menu
+- Testimonials / Proof
+- Lead Capture
+- Footer
+
+Patterns describe **purpose and behavior**, not brand mimicry.
+
+## 📚 Reference library
+
+Existing files in `templates/` remain valuable design-analysis sources. They document real-world reference websites with Design DNA, IA, UX flows, responsive rules, components and improvement layers. They are inspiration and research inputs — never pixel-clone instructions.
+
+## 📁 Repository map
+
+```text
+.
+├── templates/                 # existing reference analyses
+├── design-dna/catalog.yaml    # 12 reusable visual systems
+├── patterns/catalog.yaml      # 27 reusable patterns
+├── industries/catalog.yaml    # 16 industries + 48 archetypes
+├── schemas/                   # stable machine-readable contracts
+├── scripts/
+│   ├── validate-factory.mjs
+│   ├── check-quality-gates.mjs
+│   └── build-catalog.mjs
+├── tests/
 ├── docs/
-│   ├── TEMPLATE_SPEC.md
-│   └── PROMPT_STANDARD.md
-└── templates/
-    ├── apple.com.md
-    ├── stripe.com.md
-    ├── linear.app.md
-    ├── notion.so.md
-    └── example.com.md
+└── .github/workflows/factory-quality.yml
 ```
 
-### قانون نام‌گذاری
+## 🔒 Stable contracts
+
+The v2 architecture exposes stable IDs:
+
+- `risheh.business.v1`
+- `risheh.design-dna.v1`
+- `risheh.pattern.v1`
+- `risheh.template.v1`
+- `risheh.catalog.v1`
+- `risheh.build-spec.v1`
+
+Phase C must consume these contracts directly. It must **not** scrape prose from Markdown to discover generator behavior.
+
+## ✅ Validation & quality gates
+
+```bash
+npm install
+npm run validate
+npm run quality
+npm test
+npm run catalog
+# or
+npm run check
+```
+
+Validation fails on missing references, duplicate IDs, unsupported Design DNA/pattern links, industries with fewer than three archetypes, fewer than 48 total archetypes, invalid high-motion combinations and insufficient archetype differentiation.
+
+GitHub Actions runs the same checks on feature pushes and pull requests.
+
+## 🌐 RTL / LTR
+
+Persian RTL and English LTR are first-class factory targets. Directionality must be semantic rather than blindly mirrored: navigation, media, icons, breadcrumbs, forms, carousels, charts and motion need explicit RTL behavior.
+
+## ♿ Quality baseline
+
+Reusable output must target WCAG AA, semantic HTML, keyboard access, visible focus, reduced-motion support, readable line length, touch-safe interactions and no hover-only essential information.
+
+## 🚫 Template ≠ Clone
+
+The factory may learn from layout logic, hierarchy, spacing, interaction patterns and UX strategy, but it must never copy a reference site's trademarked identity, proprietary imagery, claims, testimonials, customer data or distinctive trade dress.
+
+## 🚀 Phase C
+
+The next product layer can add a visual configurator / AI generator on top of the same contracts:
 
 ```text
-<domain>.<tld>.md
+Select Industry
+→ Select Archetype
+→ Select / Blend Design DNA
+→ Enter Brand + Content
+→ Validate
+→ Produce risheh.build-spec.v1
+→ Generate production project
 ```
 
-نمونه:
-
-```text
-apple.com.md
-stripe.com.md
-linear.app.md
-lawbymerit.com.md
-```
-
-اگر تحلیل مربوط به یک صفحه خاص باشد:
-
-```text
-stripe.com--pricing.md
-apple.com--iphone.md
-```
-
-نام فایل باید **نام واقعی سایت مرجع** باشد؛ نه نام پروژه مشتری، نه نام داخلی ریشه و نه دسته‌بندی طراحی.
+See `docs/PHASE_C_CONTRACTS.md` for the generator boundary.
 
 ---
 
-# 🧠 هر Template چه چیزی دارد؟
-
-هر فایل Site Template باید حداقل این لایه‌ها را پوشش دهد:
-
-```text
-Reference Website
-      ↓
-Visual Audit
-      ↓
-Information Architecture
-      ↓
-Page Architecture
-      ↓
-UX Flow
-      ↓
-Design System
-      ↓
-Component System
-      ↓
-Responsive Rules
-      ↓
-Content Model
-      ↓
-Reusable Template Rules
-      ↓
-Customization Variables
-      ↓
-Implementation Architecture
-      ↓
-Master Build Prompt
-```
-
----
-
-# 🧱 استاندارد خروجی
-
-فایل هر سایت باید شامل این فصل‌ها باشد:
-
-1. Reference Snapshot
-2. Template Identity
-3. Design DNA
-4. Information Architecture
-5. Global Layout Architecture
-6. Page-by-Page Structure
-7. Section Anatomy
-8. UX & Conversion Architecture
-9. Navigation Architecture
-10. Design Tokens
-11. Typography System
-12. Color System
-13. Spacing & Grid
-14. Radius, Border & Shadow
-15. Iconography
-16. Imagery Direction
-17. Motion & Interaction
-18. Component Inventory
-19. Component Anatomy
-20. Component Variants & States
-21. Responsive Architecture
-22. Accessibility Rules
-23. Content Architecture
-24. SEO/GEO Structure
-25. Technical Frontend Architecture
-26. Reusability Rules
-27. Customization Variables
-28. What Must NOT Be Copied
-29. Improvement Layer
-30. Quality Gates
-31. Master Build Prompt
-
-جزئیات دقیق این استاندارد در `docs/TEMPLATE_SPEC.md` تعریف شده است.
-
----
-
-# 🎨 اصل مهم: Template ≠ Clone
-
-هدف این Repository کپی پیکسلی یا تقلید هویت یک برند نیست.
-
-ما از سایت مرجع این موارد را استخراج می‌کنیم:
-
-- ساختار
-- hierarchy
-- interaction patterns
-- layout logic
-- content architecture
-- component patterns
-- spacing logic
-- UX strategy
-- visual rhythm
-
-اما این موارد باید قابل جایگزینی باشند:
-
-- Logo
-- Brand name
-- تصاویر اختصاصی
-- متن‌های اختصاصی
-- Trade dress اختصاصی برند
-- Trademarkها
-- ادعاهای تجاری
-- آمار و ارقام سایت مرجع
-- Testimonials واقعی سایت مرجع
-
----
-
-# 🏗️ Template Personalization Model
-
-هر Template باید بتواند با یک Configuration جدید شخصی‌سازی شود:
-
-```yaml
-brand:
-  name: ""
-  logo: ""
-  primary_color: ""
-  secondary_color: ""
-  accent_color: ""
-  font_family: ""
-  personality: ""
-
-business:
-  industry: ""
-  audience: ""
-  positioning: ""
-  services: []
-  products: []
-
-content:
-  hero_title: ""
-  hero_subtitle: ""
-  primary_cta: ""
-  secondary_cta: ""
-  social_proof: []
-  faq: []
-
-locale:
-  language: "fa"
-  direction: "rtl"
-  country: "IR"
-
-implementation:
-  framework: "Next.js"
-  language: "TypeScript"
-  styling: "Tailwind CSS"
-```
-
----
-
-# 🧩 Component Philosophy
-
-Templateها باید از **Reusable Components** ساخته شوند، نه Page-specific markup.
-
-نمونه:
-
-```text
-components/
-├── layout/
-│   ├── Header
-│   ├── Navigation
-│   ├── Container
-│   └── Footer
-│
-├── sections/
-│   ├── Hero
-│   ├── LogoCloud
-│   ├── FeatureGrid
-│   ├── BentoGrid
-│   ├── Stats
-│   ├── Testimonials
-│   ├── FAQ
-│   └── CTA
-│
-├── ui/
-│   ├── Button
-│   ├── Card
-│   ├── Input
-│   ├── Badge
-│   ├── Tabs
-│   ├── Accordion
-│   └── Modal
-│
-└── content/
-    ├── ArticleCard
-    ├── Author
-    └── Breadcrumb
-```
-
----
-
-# 📱 Responsive First
-
-هیچ Template بدون تحلیل مستقل این Breakpointها کامل محسوب نمی‌شود:
-
-```text
-Mobile      320–479
-Large Mobile 480–767
-Tablet      768–1023
-Desktop     1024–1439
-Large       1440+
-```
-
-برای هر breakpoint باید مشخص شود:
-
-- Container width
-- Grid columns
-- Typography scaling
-- Section spacing
-- Navigation behavior
-- Card stacking
-- Image cropping
-- CTA behavior
-- Touch target sizing
-- Sticky elements
-
----
-
-# ✅ Quality Gate
-
-یک Template تنها زمانی `READY` است که:
-
-- [ ] تمام صفحات کلیدی تحلیل شده باشند.
-- [ ] IA مشخص باشد.
-- [ ] Header/Footer دقیق مستند شده باشند.
-- [ ] تمام Section Patternهای مهم ثبت شده باشند.
-- [ ] Design Tokens استخراج شده باشند.
-- [ ] Responsive rules مشخص باشند.
-- [ ] Components و states مستند شده باشند.
-- [ ] UX issues مرجع شناسایی شده باشند.
-- [ ] Accessibility بررسی شده باشد.
-- [ ] Fake Data وارد Template نشده باشد.
-- [ ] محتوای اختصاصی برند مرجع به‌عنوان Template Data استفاده نشده باشد.
-- [ ] Personalization variables مشخص باشند.
-- [ ] Master Build Prompt کامل باشد.
-
----
-
-# 🚀 Workflow
-
-هر بار یک URL جدید وارد شود:
-
-```text
-URL
- ↓
-Site Audit
- ↓
-Page Inventory
- ↓
-Screenshot / Visual Analysis
- ↓
-IA Mapping
- ↓
-UI Pattern Extraction
- ↓
-UX Analysis
- ↓
-Design Token Extraction
- ↓
-Component Mapping
- ↓
-Responsive Mapping
- ↓
-Improvement Pass
- ↓
-Template Abstraction
- ↓
-Master Prompt
- ↓
-templates/<site-domain>.md
-```
-
----
-
-## 🌱 Risheh Digital
-
-این Repository بخشی از سیستم داخلی طراحی و توسعه ریشه برای تبدیل Referenceها به دانش ساختاریافته و Templateهای قابل بازاستفاده است.
+**Risheh Digital — engineered systems for repeatable, high-quality digital production.**
