@@ -1,0 +1,16 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"risheh.catalog.v1",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["schema","version","generated_at","industries","archetypes","design_dna","patterns"],
+  "properties":{
+    "schema":{"const":"risheh.catalog.v1"},
+    "version":{"type":"string","pattern":"^\\d+\\.\\d+\\.\\d+$"},
+    "generated_at":{"type":"string"},
+    "industries":{"type":"array","items":{"type":"object","required":["id","name"],"properties":{"id":{"type":"string"},"name":{"type":"string"}}}},
+    "archetypes":{"type":"array","items":{"type":"object","required":["id","industry","status"],"properties":{"id":{"type":"string"},"industry":{"type":"string"},"status":{"type":"string"}}}},
+    "design_dna":{"type":"array","items":{"type":"object","required":["id","name"],"properties":{"id":{"type":"string"},"name":{"type":"string"}}}},
+    "patterns":{"type":"array","items":{"type":"object","required":["id","family"],"properties":{"id":{"type":"string"},"family":{"type":"string"}}}}
+  }
+}
