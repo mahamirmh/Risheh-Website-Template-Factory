@@ -1,0 +1,13 @@
+{
+  "schema":"risheh.build-spec.v1","version":"1.0.0",
+  "project":{"id":"fixture-service","name":"Fixture Service"},
+  "brand":{"name":"Fixture Service","positioning":"Professional services for clear business outcomes.","primary_color":"#111111","secondary_color":"#f5f5f5","locale":{"language":"en","direction":"ltr","country":"US"}},
+  "industry":{"id":"professional-services","archetype":"apple-service-company"},
+  "design":{"dna":["apple-minimal"],"tokens":{}},
+  "pages":[{"id":"home","route":"/"},{"id":"services","route":"/services"},{"id":"contact","route":"/contact"}],
+  "sections":[{"id":"home-hero","pattern":"hero-outcome","page":"home"},{"id":"home-services","pattern":"service-outcome-list","page":"home"},{"id":"home-proof","pattern":"testimonial-proof-grid","page":"home"},{"id":"home-contact","pattern":"lead-qualified-brief","page":"home"}],
+  "content":{"hero_title":"Clear services, designed around outcomes","hero_subtitle":"A structured foundation for presenting expertise and starting the right conversation.","primary_cta":"Contact","primary_goal":"qualified-lead"},
+  "seo":{"locale":{"language":"en","direction":"ltr","country":"US"}},"accessibility":{"target":"AA","reducedMotion":true},"responsive":{"mobileFirst":true},"motion":{"intensity":"low"},
+  "implementation":{"framework":"Next.js","language":"TypeScript","styling":"Tailwind CSS"},
+  "provenance":{"factory_version":"2.1.0","template_id":"professional-services/apple-service-company","reference_sources":[]}
+}

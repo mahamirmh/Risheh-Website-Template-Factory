@@ -1,0 +1,13 @@
+{
+  "schema":"risheh.build-spec.v1","version":"1.0.0",
+  "project":{"id":"fixture-architecture","name":"Fixture Architecture"},
+  "brand":{"name":"Fixture Architecture","positioning":"Architecture practice focused on spatial clarity and project authorship.","primary_color":"#1a1a1a","secondary_color":"#f1efe9","locale":{"language":"en","direction":"ltr","country":"GB"}},
+  "industry":{"id":"architecture","archetype":"calm-editorial-studio"},
+  "design":{"dna":["calm-luxury","editorial-luxury"],"tokens":{}},
+  "pages":[{"id":"home","route":"/"},{"id":"projects","route":"/projects"},{"id":"studio","route":"/studio"},{"id":"contact","route":"/contact"}],
+  "sections":[{"id":"home-hero","pattern":"hero-gallery","page":"home"},{"id":"home-portfolio","pattern":"portfolio-gallery","page":"home"},{"id":"home-case","pattern":"portfolio-case-study","page":"home"},{"id":"home-contact","pattern":"lead-qualified-brief","page":"home"}],
+  "content":{"hero_title":"Spaces shaped with intent","hero_subtitle":"A project-led architecture website structure.","primary_cta":"Start a project","primary_goal":"qualified-enquiry"},
+  "seo":{"locale":{"language":"en","direction":"ltr","country":"GB"}},"accessibility":{"target":"AA","reducedMotion":true},"responsive":{"mobileFirst":true},"motion":{"intensity":"low"},
+  "implementation":{"framework":"Next.js","language":"TypeScript","styling":"Tailwind CSS"},
+  "provenance":{"factory_version":"2.1.0","template_id":"architecture/calm-editorial-studio","reference_sources":[]}
+}
