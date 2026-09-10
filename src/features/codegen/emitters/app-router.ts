@@ -17,7 +17,7 @@ export function emitAppRouter(model: GenerationModel): GeneratedFile[] {
     const rendered = pageSections.map((section, index) => {
       const isFirstHero = index === 0 && section.patternId.startsWith('hero-');
       const props = isFirstHero
-        ? ` id=${JSON.stringify(section.id)} title={site.content.heroTitle} subtitle={site.content.heroSubtitle} actionLabel={site.content.primaryCta}`
+        ? ` id=${JSON.stringify(section.id)} title={site.content.heroTitle || undefined} subtitle={site.content.heroSubtitle || undefined} actionLabel={site.content.primaryCta || undefined}`
         : ` id=${JSON.stringify(section.id)}`;
       return `      <${section.componentName}${props} />`;
     }).join('\n');
