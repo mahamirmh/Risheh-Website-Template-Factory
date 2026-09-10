@@ -5,14 +5,26 @@ import { resolveRoutes } from './routes.ts';
 import { resolveDesignTokens } from './tokens.ts';
 import { componentNameForPattern } from './component-graph.ts';
 
-function readLocale(content: Record<string, unknown>) {
-  const locale = typeof content.locale === 'string' ? content.locale : '';
-  const direction = content.direction;
+function asRecord(value: unknown): Record<string, unknown> {
+  return value && typeof value === 'object' && !Array.isArray(value) ? value as Record<string, unknown> : {};
+}
+
+function readLocale(buildSpec: BuildSpec) {
+  const content = buildSpec.content;
+  const brandLocale = asRecord((buildSpec.brand as Record<string, unknown>).locale);
+  const seoLocale = asRecord((buildSpec.seo as Record<string, unknown>).locale);
+
+  const localeValue =
+    (typeof content.locale === 'string' ? content.locale : undefined) ??
+    (typeof brandLocale.language === 'string' ? `${brandLocale.language}${typeof brandLocale.country === 'string' ? `-${brandLocale.country}` : ''}` : undefined) ??
+    (typeof seoLocale.language === 'string' ? `${seoLocale.language}${typeof seoLocale.country === 'string' ? `-${seoLocale.country}` : ''}` : undefined);
+
+  const direction = content.direction ?? brandLocale.direction ?? seoLocale.direction;
   if (direction !== 'rtl' && direction !== 'ltr') {
-    throw new CodegenError('resolve', CODES.INVALID_BUILD_SPEC, 'Build Spec content.direction must be rtl or ltr');
+    throw new CodegenError('resolve', CODES.INVALID_BUILD_SPEC, 'Build Spec requires an explicit rtl/ltr direction');
   }
-  const [language, country] = locale.split('-');
-  if (!language) throw new CodegenError('resolve', CODES.INVALID_BUILD_SPEC, 'Build Spec content.locale is required');
+  if (!localeValue) throw new CodegenError('resolve', CODES.INVALID_BUILD_SPEC, 'Build Spec requires explicit locale information');
+  const [language, country] = localeValue.split('-');
   return { language, direction, country: country || undefined } as const;
 }
 
@@ -37,7 +49,7 @@ export function resolveGenerationModel(buildSpec: BuildSpec, catalog: FactoryCat
   });
 
   const routes = resolveRoutes(buildSpec.pages);
-  const locale = readLocale(buildSpec.content);
+  const locale = readLocale(buildSpec);
   const sections = buildSpec.sections.map((section) => ({
     id: section.id,
     patternId: section.pattern,
