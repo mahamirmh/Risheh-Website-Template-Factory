@@ -12,6 +12,7 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -22,5 +23,7 @@ jobs:
       - run: npm run catalog
       - name: Verify catalog is generator-ready
         run: test -s generated/catalog.json
-      - name: Build Phase C1 application
+      - name: Build Factory application
         run: npm run build
+      - name: Verify C2 compatibility and generated production projects
+        run: npm run codegen:check
