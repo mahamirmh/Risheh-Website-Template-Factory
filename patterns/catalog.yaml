@@ -1,0 +1,35 @@
+schema: risheh.pattern.catalog.v1
+version: 1.0.0
+patterns:
+  - {id: hero-authority, family: hero, purpose: "Establish authority fast", stage: awareness, conversion_role: trust}
+  - {id: hero-atmosphere, family: hero, purpose: "Lead with sensory mood", stage: awareness, conversion_role: desire}
+  - {id: hero-gallery, family: hero, purpose: "Lead with portfolio proof", stage: awareness, conversion_role: proof}
+  - {id: hero-outcome, family: hero, purpose: "Lead with business outcome", stage: awareness, conversion_role: clarity}
+  - {id: hero-editorial, family: hero, purpose: "Lead with a point of view", stage: awareness, conversion_role: differentiation}
+  - {id: hero-product, family: hero, purpose: "Explain product value and action", stage: awareness, conversion_role: product-intent}
+  - {id: hero-local-intent, family: hero, purpose: "Answer local service intent", stage: awareness, conversion_role: local-conversion}
+  - {id: nav-editorial, family: navigation, purpose: "Sparse editorial navigation", stage: exploration, conversion_role: orientation}
+  - {id: nav-corporate, family: navigation, purpose: "Structured enterprise navigation", stage: exploration, conversion_role: orientation}
+  - {id: nav-overlay, family: navigation, purpose: "Immersive full-screen navigation", stage: exploration, conversion_role: orientation}
+  - {id: nav-local-service, family: navigation, purpose: "Service and contact-forward navigation", stage: exploration, conversion_role: conversion}
+  - {id: nav-product, family: navigation, purpose: "Product-centric navigation", stage: exploration, conversion_role: product-discovery}
+  - {id: portfolio-gallery, family: portfolio, purpose: "Visual project discovery", stage: consideration, conversion_role: proof}
+  - {id: portfolio-case-study, family: portfolio, purpose: "Deep outcome-oriented project proof", stage: consideration, conversion_role: proof}
+  - {id: service-authority-grid, family: services, purpose: "Show breadth with authority", stage: consideration, conversion_role: capability}
+  - {id: service-outcome-list, family: services, purpose: "Map services to outcomes", stage: consideration, conversion_role: clarity}
+  - {id: menu-signature, family: menu, purpose: "Surface signature items", stage: consideration, conversion_role: desire}
+  - {id: menu-category, family: menu, purpose: "Browse menu by category", stage: consideration, conversion_role: discovery}
+  - {id: testimonial-editorial, family: testimonials, purpose: "Long-form human proof", stage: validation, conversion_role: trust}
+  - {id: testimonial-proof-grid, family: testimonials, purpose: "Scannable evidence matrix", stage: validation, conversion_role: trust}
+  - {id: lead-qualified-brief, family: lead-capture, purpose: "Qualify complex projects", stage: conversion, conversion_role: qualified-lead}
+  - {id: lead-consultation, family: lead-capture, purpose: "Book professional consultation", stage: conversion, conversion_role: booking}
+  - {id: lead-reservation, family: lead-capture, purpose: "Reserve table or experience", stage: conversion, conversion_role: reservation}
+  - {id: lead-local-contact, family: lead-capture, purpose: "Convert local intent into call/message/form", stage: conversion, conversion_role: local-lead}
+  - {id: footer-editorial, family: footer, purpose: "Quiet editorial close", stage: conversion, conversion_role: secondary-navigation}
+  - {id: footer-corporate, family: footer, purpose: "Dense corporate utility footer", stage: conversion, conversion_role: trust-and-navigation}
+  - {id: footer-local-business, family: footer, purpose: "Location, hours and local action", stage: conversion, conversion_role: local-conversion}
+standards:
+  required_content_rule: "Every pattern implementation declares required and optional content explicitly."
+  responsive_rule: "No essential behavior may rely on hover, fixed viewport height, or desktop-only composition."
+  accessibility_rule: "Semantic HTML, keyboard access, visible focus, AA contrast and reduced-motion support are mandatory."
+  brand_rule: "Patterns describe behavior and structure; they must never reproduce a reference brand's trade dress."
