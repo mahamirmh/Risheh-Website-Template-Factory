@@ -2,11 +2,9 @@
 
 > **Business-oriented website design intelligence for fast, high-quality, non-generic website production.**
 
-Risheh Website Template Factory is not a collection of cloned themes. It is a structured **Design Intelligence + Business Archetype Factory** that turns reference-site research into reusable design DNA, UX patterns, industry psychology, validated archetypes and generator-ready build specifications.
+Risheh Website Template Factory is not a collection of cloned themes. It is a structured **Design Intelligence + Business Archetype + Production Code Factory** that turns reference-site research into reusable Design DNA, UX patterns, industry psychology, validated archetypes, generator-ready build specifications and standalone Next.js projects.
 
-## ✨ Factory v2 — B → C-ready
-
-The repository now has two complementary layers:
+## ✨ Factory v2 — B → C2
 
 ```text
 Reference Analysis Library
@@ -21,9 +19,15 @@ Business Archetypes
         ↓
 Brand / Content Configuration
         ↓
+Phase C1 Visual Generator
+        ↓
 risheh.build-spec.v1
         ↓
-Phase C1 Visual Generator / Agent Handoff
+Phase C2 Deterministic Code Generator
+        ↓
+Standalone Production Next.js Project
+        ↓
+Optional Policy-Bounded Agent Enhancement
 ```
 
 ### Current factory inventory
@@ -34,9 +38,10 @@ Phase C1 Visual Generator / Agent Handoff
 | Business archetypes | **48** |
 | Design DNA profiles | **12** |
 | Reusable patterns | **27** |
-| Phase C contract | `risheh.build-spec.v1` |
+| Stable generation contract | `risheh.build-spec.v1` |
 | Languages | RTL + LTR |
-| Visual generator | **Phase C1** |
+| Visual composer | **Phase C1** |
+| Production code generator | **Phase C2** |
 
 ## 🧠 Core principle
 
@@ -51,15 +56,13 @@ Business Psychology
 = Build Specification
 ```
 
-Archetypes must differ materially in at least two dimensions such as layout architecture, proof model, conversion model, motion model, content density, interaction model or design DNA. A color/font swap is not a new archetype.
+Archetypes must differ materially in layout architecture, proof model, conversion model, motion model, content density, interaction model or Design DNA. A color/font swap is not a new archetype.
 
 ## 🖥️ Phase C1 — Visual Generator
 
 The repository includes a real Next.js composition interface at `/generator`.
 
-C1 lets a user select an industry and archetype, blend compatible Design DNA profiles, configure pages/patterns, enter brand/content/locale inputs, apply accessibility/SEO/responsive/motion preferences, and then export a **schema-validated `risheh.build-spec.v1`**.
-
-It also generates copy-ready handoff prompts for **Codex**, **Claude Code**, and provider-neutral coding agents. C1 deliberately stops before autonomous code generation; that remains the Phase C2 boundary.
+C1 lets a user select an industry and archetype, blend compatible Design DNA profiles, configure pages/patterns, enter brand/content/locale inputs, apply accessibility/SEO/responsive/motion preferences, and export a schema-validated **`risheh.build-spec.v1`**.
 
 ```bash
 npm install
@@ -68,7 +71,74 @@ npm run dev
 
 Then open `http://localhost:3000/generator`.
 
-See `docs/PHASE_C1_VISUAL_GENERATOR.md` for the operating guide.
+See `docs/PHASE_C1_VISUAL_GENERATOR.md`.
+
+## ⚙️ Phase C2 — Production Next.js Code Generation
+
+C2 consumes the exact same `risheh.build-spec.v1`. It does **not** introduce a second public generation contract and does not scrape Markdown.
+
+The default generator is deterministic and provider-independent:
+
+```text
+Validated Build Spec
+→ Factory reference resolution
+→ GenerationModel
+→ Component graph
+→ deterministic FilePlan + SHA-256 hashes
+→ Next.js project emitters
+→ static quality gates
+→ .generated/<project-id>
+→ npm install
+→ ESLint
+→ Next production build
+→ risheh-generation.json quality evidence
+```
+
+Generated projects use:
+
+- Next.js 16.3.x App Router
+- React 19.3.x
+- TypeScript strict mode
+- Tailwind CSS 4.x
+- semantic HTML
+- explicit RTL/LTR document direction
+- reduced-motion safeguards
+- reusable section components
+- route files matching the Build Spec
+- no fabricated testimonials, metrics, awards, addresses, team identities, credentials, prices or case-study outcomes
+
+### Generate from C1
+
+Once the C1 Build Spec is valid, the generator page exposes **Generate Next.js project**. C2 writes the project to the local Factory workspace under:
+
+```text
+.generated/<project-id>/
+```
+
+The API only reports completion after the generated project passes its applicable quality gates.
+
+### Verify C2 from CLI
+
+```bash
+npm run codegen:compat
+npm run codegen:fixtures
+npm run codegen:fixtures:quality
+npm run codegen:forbidden
+# complete C2 verification
+npm run codegen:check
+```
+
+`codegen:check` verifies all **48 archetypes / 12 Design DNA profiles / 27 patterns**, then generates three representative standalone projects — LTR professional services, Persian RTL legal, and architecture/gallery — and independently installs, lints and production-builds them.
+
+### Optional agent enhancement
+
+AI enhancement is deliberately **optional**. The deterministic project must already be runnable before an agent may refine it. Agents can improve polish, responsive composition, accessibility and non-factual microcopy, but cannot change routes, schema identity, industry/archetype identity, provenance, dependency policy or invent factual business claims.
+
+See:
+
+- `docs/CODEGEN_ARCHITECTURE.md`
+- `docs/CODEGEN_AGENT_POLICY.md`
+- `docs/CODEGEN_QUALITY_GATES.md`
 
 ## 🏭 Industry packs
 
@@ -99,34 +169,40 @@ Each profile defines typography behavior, spacing, layout, geometry, imagery, mo
 
 ## 🧩 Pattern library
 
-`patterns/catalog.yaml` contains reusable behavioral patterns for Hero, Navigation, Portfolio / Case Study, Services, Menu, Testimonials / Proof, Lead Capture and Footer.
+`patterns/catalog.yaml` contains **27 reusable behavioral patterns** for Hero, Navigation, Portfolio / Case Study, Services, Menu, Testimonials / Proof, Lead Capture and Footer.
 
-Patterns describe **purpose and behavior**, not brand mimicry.
+C2 has an explicit component-family mapping for every current pattern. Unsupported required patterns fail closed rather than silently degrading into generic cards.
 
 ## 📚 Reference library
 
-Existing files in `templates/` remain valuable design-analysis sources. They document real-world reference websites with Design DNA, IA, UX flows, responsive rules, components and improvement layers. They are inspiration and research inputs — never pixel-clone instructions.
+Files in `templates/` remain design-analysis sources. They document real-world reference websites with Design DNA, IA, UX flows, responsive rules, components and improvement layers. They are inspiration and research inputs — never pixel-clone instructions.
 
 ## 📁 Repository map
 
 ```text
 .
-├── app/                       # Phase C1 Next.js App Router UI
-├── src/                       # generator engine, catalog loader, UI and contracts
-├── templates/                 # existing reference analyses
+├── app/
+│   ├── generator/             # C1 visual composition surface
+│   └── api/generate/          # C2 generation endpoint
+├── src/
+│   ├── features/generator/    # C1 Build Spec composition
+│   └── features/codegen/      # C2 resolver, emitters, quality, agent policy
+├── templates/                 # reference analyses
 ├── design-dna/catalog.yaml    # 12 reusable visual systems
 ├── patterns/catalog.yaml      # 27 reusable patterns
 ├── industries/catalog.yaml    # 16 industries + 48 archetypes
 ├── schemas/                   # stable machine-readable contracts
-├── scripts/                   # validation, quality and catalog generation
-├── tests/                     # Phase B + C1 contract tests
-├── docs/                      # architecture, standards and C1 guide
+├── scripts/codegen/           # C2 compatibility and generated-build checks
+├── tests/                     # Phase B + C1 + C2 tests and fixtures
+├── docs/                      # architecture, standards and generator guides
 └── .github/workflows/factory-quality.yml
 ```
 
+Runtime-generated projects are placed under `.generated/` and are intentionally git-ignored.
+
 ## 🔒 Stable contracts
 
-The v2 architecture exposes stable IDs:
+The architecture exposes stable IDs:
 
 - `risheh.business.v1`
 - `risheh.design-dna.v1`
@@ -135,7 +211,7 @@ The v2 architecture exposes stable IDs:
 - `risheh.catalog.v1`
 - `risheh.build-spec.v1`
 
-Phase C consumes these contracts directly. It does **not** scrape prose from Markdown to discover generator behavior.
+**C2 consumes `risheh.build-spec.v1` unchanged.** Internal generation metadata such as `risheh-generation.json` is provenance, not a replacement input contract.
 
 ## ✅ Validation & quality gates
 
@@ -146,46 +222,42 @@ npm run quality
 npm test
 npm run catalog
 npm run build
-# or
+npm run codegen:check
+# Factory checks without generated-project production builds
 npm run check
 ```
 
-Validation fails on missing references, duplicate IDs, unsupported Design DNA/pattern links, industries with fewer than three archetypes, fewer than 48 total archetypes, invalid high-motion combinations and insufficient archetype differentiation.
+Factory validation fails on missing references, duplicate IDs, unsupported Design DNA/pattern links, industries with fewer than three archetypes, fewer than 48 total archetypes, invalid high-motion combinations and insufficient archetype differentiation.
 
-C1 adds tests for deterministic Build Spec composition and handoff contracts. GitHub Actions also runs a real Next.js production build.
+C2 additionally fails closed on unsafe routes, path traversal, unknown DNA/pattern IDs, duplicate generated paths, missing declared routes, suspicious fabricated content, missing provenance, failed generated-project lint or failed Next production build.
 
 ## 🌐 RTL / LTR
 
-Persian RTL and English LTR are first-class factory targets. Directionality must be semantic rather than blindly mirrored: navigation, media, icons, breadcrumbs, forms, carousels, charts and motion need explicit RTL behavior.
+Persian RTL and English LTR are first-class targets. Direction comes from the Build Spec and is applied at the generated document root. Logical layout behavior is preferred over blind mirroring; navigation, media, icons, forms and motion must preserve semantic intent.
 
 ## ♿ Quality baseline
 
-Reusable output must target WCAG AA, semantic HTML, keyboard access, visible focus, reduced-motion support, readable line length, touch-safe interactions and no hover-only essential information.
+Reusable output targets WCAG AA, semantic HTML, keyboard access, visible focus, reduced-motion support, readable line length, touch-safe interactions and no hover-only essential information.
 
 ## 🚫 Template ≠ Clone
 
 The factory may learn from layout logic, hierarchy, spacing, interaction patterns and UX strategy, but it must never copy a reference site's trademarked identity, proprietary imagery, claims, testimonials, customer data or distinctive trade dress.
 
-## 🚀 Phase C roadmap
+## 🚀 Phase C flow
 
 ```text
-Phase C1
-Select Industry
-→ Select Archetype
-→ Select / Blend Design DNA
-→ Configure Pages + Patterns
-→ Enter Brand + Content
-→ Validate
-→ Produce risheh.build-spec.v1
-→ Agent Handoff
+C1
+Industry + Archetype + Design DNA + Pages + Content
+→ risheh.build-spec.v1
 
-Phase C2 (future)
-Validated Build Spec
-→ Code Generation
-→ Production Project
+C2
+risheh.build-spec.v1
+→ deterministic production code generation
+→ quality-verified standalone Next.js project
+→ optional bounded agent enhancement
 ```
 
-See `docs/PHASE_C_CONTRACTS.md` and `docs/PHASE_C1_VISUAL_GENERATOR.md` for the product boundary.
+See `docs/PHASE_C_CONTRACTS.md`, `docs/PHASE_C1_VISUAL_GENERATOR.md` and the C2 codegen docs for the complete product boundary.
 
 ---
 
