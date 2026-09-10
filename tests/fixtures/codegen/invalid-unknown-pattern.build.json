@@ -1,0 +1,12 @@
+{
+  "schema":"risheh.build-spec.v1","version":"1.0.0",
+  "project":{"id":"fixture-invalid","name":"Fixture Invalid"},
+  "brand":{"name":"Fixture","locale":{"language":"en","direction":"ltr","country":"US"}},
+  "industry":{"id":"professional-services","archetype":"apple-service-company"},
+  "design":{"dna":["apple-minimal"],"tokens":{}},
+  "pages":[{"id":"home","route":"/"}],
+  "sections":[{"id":"unknown","pattern":"pattern-does-not-exist","page":"home"}],
+  "content":{},"seo":{},"accessibility":{},"responsive":{},"motion":{},
+  "implementation":{"framework":"Next.js","language":"TypeScript","styling":"Tailwind CSS"},
+  "provenance":{"factory_version":"2.1.0","template_id":"professional-services/apple-service-company","reference_sources":[]}
+}
