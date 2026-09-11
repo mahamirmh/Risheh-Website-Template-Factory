@@ -27,3 +27,5 @@ jobs:
         run: npm run build
       - name: Verify C2 compatibility and generated production projects
         run: npm run codegen:check
+      - name: Verify C3 safe regeneration contracts
+        run: npm run regeneration:check

@@ -1,0 +1,7 @@
+import { cp, mkdir, rm, writeFile, unlink } from 'node:fs/promises';
+import path from 'node:path'; import type { RegenerationPlan } from './model.ts';
+const excluded=(source:string)=>['node_modules','.next','.turbo','.cache'].includes(path.basename(source));
+export async function createStagingWorkspace(activeRoot:string,regenerationId:string){const parent=path.dirname(path.resolve(activeRoot));const staging=path.join(parent,`.risheh-staging-${regenerationId}`);await rm(staging,{recursive:true,force:true});await mkdir(staging,{recursive:true});await cp(activeRoot,staging,{recursive:true,filter:(source)=>!excluded(source)});return staging;}
+export async function applyPlanToStaging(stagingRoot:string,plan:RegenerationPlan){if(plan.blocked)throw new Error('Blocking conflicts prevent staging apply');const root=path.resolve(stagingRoot);for(const entry of plan.entries){const target=path.resolve(root,entry.path);if(!target.startsWith(`${root}${path.sep}`))throw new Error(`Unsafe staging path: ${entry.path}`);if(entry.status==='delete-factory'){await unlink(target).catch((e:any)=>{if(e?.code!=='ENOENT')throw e;});continue;}if(['add','update-factory','auto-merge'].includes(entry.status)){if(entry.resultContent===undefined)throw new Error(`Missing result content: ${entry.path}`);await mkdir(path.dirname(target),{recursive:true});await writeFile(target,entry.resultContent,'utf8');}}
+}
+export async function discardStagingWorkspace(stagingRoot:string){await rm(stagingRoot,{recursive:true,force:true});}
